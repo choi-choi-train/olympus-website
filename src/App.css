@@ -244,6 +244,9 @@ input:focus {
   p {
     font-size: 12px;
   }
+  h4 {
+    font-size: 18px;
+  }
   h2 {
     font-size: 30px;
   }
