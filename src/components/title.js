@@ -5,7 +5,6 @@ export default function TITLE(props) {
     <div className="container-fluid d-flex flex-column 
                     justify-content-center align-items-center fullheight">
         <img id="titlelogo" src={require('../assets/logo.png')} alt='icon'/>
-        <div id="titleshadow" style={{zIndex: 1, marginTop: '30px', height: '100px', width: '100%'}}></div>
         <div className="d-flex flex-column align-items-center" style={{zIndex: 2, position: 'absolute', marginTop: '60px'}}>
             <div className="d-flex flex-column align-items-end">
                 <h1 className="fw-bold" style={{marginTop:'120px'}}>OLYMPUS</h1>
