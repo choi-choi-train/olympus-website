@@ -1,15 +1,19 @@
 import React from 'react'
 
-export default function header(props) {
-    var o = (props.scrollPosition - window.innerHeight + 300) / 120;
+import Button from './BUTTON.js'
 
-    return (
-        <div id='header' className="container-fluid header d-flex flex-row" style={{opacity: o.toFixed(1)}}>
-            <div className="container-fluid d-flex flex-row align-items-end borderbottom">
-                <h3 className='fw-bold' style={{marginRight: '10px'}}>OLYMPUS</h3>
-                <h6 className='gold' style={{marginBottom: '13px'}}>Find strength in numbers.</h6>
-            </div>
-            <img className="key-up" src={require('../assets/grecian_key_up.png')} alt="key"/>
-        </div>
-    )
+export default function HEADER(props) {
+  return (
+    <div className="fixed top-0 h-20 px-[2rem] z-50
+                    flex flex-row w-full justify-between items-center
+                    text-white drop-shadow-2xl" style={{borderBottom:'solid 1px rgba(255, 255, 255, 0.15)'}}>
+      <a href="/" className="flex flex-row items-center h-[30%] space-x-[1rem]">
+        <img className='object-contain h-[100%] w-auto' src={require('../assets/grecian_key_up.png')} alt='logo'/>
+        <div className="text-3xl avenirblack">OLYMPUS</div>
+      </a>
+      <div onClick={()=>{props.setFocus('signup'); props.signupRef.current.scrollIntoView();}}>
+        <Button type='solid' text='Sign Up'/>
+      </div>
+    </div>
+  )
 }
