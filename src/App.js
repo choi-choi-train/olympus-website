@@ -213,7 +213,7 @@ function App() {
       </div>
 
       <div ref={signupRef} className='relative z-40 w-[80%] lg:w-[70%] h-screen min-h-[900px] max-w-[1176px] mx-auto flex flex-col justify-center items-center'>
-        <div className='w-full text-white avenirroman'>
+        <div className='w-full text-white avenirroman w-[80%]'>
           <div className='avenirbook text-[2.5rem] md:text-[4rem]'>Try Olympus</div>
           <p className='w-[20rem] md:w-[25rem] mb-[5rem]' style={{color: 'rgba(243, 240, 254, 0.60)'}}>
             Enter your email address, and receive details on joining our community of test users.
