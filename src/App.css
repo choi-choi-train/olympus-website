@@ -8,6 +8,10 @@ html, body {
   cursor: -webkit-pointer;
 }
 
+p {
+  font-size: min(5vw, 14px)
+}
+
 @font-face {
   font-family: 'Avenir';
   src: local('Avenir'),

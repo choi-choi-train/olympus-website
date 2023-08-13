@@ -35,7 +35,7 @@ export default function Form() {
 
   return (
     <div>
-      <div id='form' className='flex w-full border-solid border-[1px] border-white rounded-full p-[8px] justify-start items-center avenirroman'>
+      <p id='form' className='flex w-full border-solid border-[1px] border-white rounded-full p-[8px] justify-start items-center avenirroman'>
         <input className='bg-[rgba(0,0,0,0)] px-[20px] w-[100%]' 
                 id="email" type="text"
                 placeholder='ex) info@projectolympus.app'
@@ -45,7 +45,7 @@ export default function Form() {
               onClick={handleSubmit} style={submitSpring}>
             Submit
         </animated.div>
-    </div>
+    </p>
     <div className='avenirroman text-gold my-[1rem]'>
       {
         thankYou

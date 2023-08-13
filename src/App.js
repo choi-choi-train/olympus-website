@@ -55,7 +55,7 @@ function App() {
         setFocus('track');
       }
       
-      if (signupRef.current.getBoundingClientRect().y <= window.innerHeight*0.1) {
+      if (signupRef.current.getBoundingClientRect().y <= window.innerHeight*0.5) {
         setFocus('signup');
       }
   };
@@ -105,7 +105,7 @@ function App() {
     maxWidth: '1680px',
     aspectRatio : '1/1',
     config: {
-      mass: 1,
+      mass: isMobile ? 0.5 : 1,
       friction: 30,
       tension: 160,
     },
@@ -116,7 +116,7 @@ function App() {
     cursor: 'pointer',
     translate: mockup || focus === 'signup' ? '15rem' : '-2rem',
     config: {
-      mass: 1,
+      mass: isMobile ? 0.5 : 1,
       friction: 40,
       tension: 160,
     },
@@ -134,7 +134,7 @@ function App() {
                                                                     : (focus === 'analyze' ? `translate(${(circleSize * 0.25)}px, ${-circlePg.width/2}px)` : `translate(0px, ${-circlePg.height/2}px)`))),
     opacity: focus === 'signup' ? 0 : 1,
     config: {
-      mass: 1,
+      mass: isMobile ? 0.5 : 1,
       friction: 40,
       tension: 120,
     },
@@ -144,7 +144,7 @@ function App() {
     right: 0,
     transform: focus !== 'signup' ? `translate(${-scroll/3}px, 0px)` : `translate(${-circleSize/2}px, ${-circleSize/2}px)`,
     config: {
-      mass: 1,
+      mass: isMobile ? 0.5 : 1,
       friction: 30,
       tension: 160,
     },
@@ -173,9 +173,9 @@ function App() {
 
         <animated.div className='absolute w-[100%] sm:w-[50%] lg:w-[55%] right-0 top-0 h-screen min-h-[700px] z-20'>
           {
-            false
+            isMobile
             ?
-            <img className='absolute object-contain z-10 h-[90%] sm:h-[120%] w-auto sm:min-w-[500px] bottom-[-45%] sm:bottom-[-40%] left-[40%] sm:left-[2rem]' src={require('./assets/mockup.png')} alt={'olympus mockup'}/>
+            <img className='absolute object-contain z-10 h-[90%] sm:h-[120%] w-auto sm:min-w-[500px] bottom-[-45%] sm:bottom-[-40%] left-[40%] sm:left-[2rem] mt-[10rem]' src={require('./assets/mockup.png')} alt={'olympus mockup'}/>
             :
             <Animation scroll={scroll} mockup={mockup}/>
           }
@@ -192,7 +192,7 @@ function App() {
         </animated.div>
       </div>
 
-      <div className='relative z-40 w-[80%] lg:w-[70%] max-w-[1176px] mx-auto flex flex-col justify-center space-y-[10rem]'>
+      <div className='mt-[20rem] relative z-40 w-[80%] lg:w-[70%] max-w-[1176px] mx-auto flex flex-col justify-center space-y-[10rem]'>
         <div ref={trackRef} className='relative w-full h-screen min-h-[700px] text-white flex flex-col lg:flex-row justify-center lg:justify-between items-between lg:items-center z-10
                                         mb-[10rem] lg:mb-0'>
           <img className='w-[100%] md:w-[70%] lg:w-[50%] h-auto object-contain mb-[2rem]' src={require('./assets/trackmockupfull.png')} alt='track screen'/>
@@ -213,7 +213,7 @@ function App() {
       </div>
 
       <div ref={signupRef} className='relative z-40 w-[80%] lg:w-[70%] h-screen min-h-[900px] max-w-[1176px] mx-auto flex flex-col justify-center items-center'>
-        <div className='w-full text-white avenirroman w-[80%]'>
+        <div className='text-white avenirroman w-[80%]'>
           <div className='avenirbook text-[2.5rem] md:text-[4rem]'>Try Olympus</div>
           <p className='w-[20rem] md:w-[25rem] mb-[5rem]' style={{color: 'rgba(243, 240, 254, 0.60)'}}>
             Enter your email address, and receive details on joining our community of test users.
