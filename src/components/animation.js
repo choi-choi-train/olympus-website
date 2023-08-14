@@ -76,7 +76,7 @@ export default function Animation(props) {
   })
 
   return (
-<animated.div className='absolute z-10 h-[110%] min-w-[500px] w-[80%] bottom-[-45%] sm:bottom-[-30%] left-[40%] sm:left-[1rem] overflow-hidden'
+<animated.div className='absolute z-0 h-[110%] min-w-[500px] w-[80%] bottom-[-45%] sm:bottom-[-30%] left-[40%] sm:left-[1rem] overflow-hidden'
   style={mockupSpring}>
     <animated.div className='absolute w-full h-full z-10' style={mockupbgSpring}>
         <img id='mockupbg' className='object-contain w-full h-full' src={require('../assets/mockupanimation/mockupbg.png')} alt={'olympus mockup'}/>

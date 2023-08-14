@@ -150,14 +150,17 @@ function App() {
     },
   });
 
+  const animationSpring = useSpring({
+    opacity: mockup ? 1 : 0,
+  })
+
   return (
     <div>
       <div className='w-full overflow-hidden'>
       <Header focus={focus} setFocus={setFocus} signupRef={signupRef}/>
       <div className='relative text-[white] z-40 w-full mx-auto max-w-[1680px] h-screen min-h-[1000px] flex justify-between items-start sm:items-center avenirroman'>
         
-        
-        <div className='relative z-50 w-[80%] sm:w-[70%] mx-auto max-w-[1176px] h-[40%] sm:h-[50%] flex flex-col relative z-20 justify-between items-start mt-[20vw] sm:mt-0'>
+        <div className='relative z-50 w-[80%] sm:w-[70%] mx-auto max-w-[1176px] h-[40%] sm:h-[50%] flex flex-col justify-between items-start mt-[20vw] sm:mt-0'>
           <div>
             <div className='avenirbook text-[2.5rem] md:text-[4rem]'>Ditch the Notebook.</div>
             <p className='w-[20rem] md:w-[25rem]' style={{color: 'rgba(243, 240, 254, 0.60)'}}>
@@ -171,7 +174,8 @@ function App() {
           </div>
         </div>
 
-        <animated.div className='absolute w-[100%] sm:w-[50%] lg:w-[55%] right-0 top-0 h-screen min-h-[700px] z-20'>
+        <animated.div className='absolute w-[100%] z-20 sm:w-[50%] lg:w-[55%] right-0 top-0 h-screen min-h-[700px]'
+          style={animationSpring}>
           {
             isMobile
             ?
@@ -181,13 +185,25 @@ function App() {
           }
         </animated.div>
 
-        <div ref={circlePlayGround} className='fixed z-10  max-w-[1680px] w-screen h-screen min-h-[700px] max-h-[900px] top-0 m-auto'>
+        {
+          !isMobile
+          ?
+          <div ref={circlePlayGround} className='fixed z-10  max-w-[1680px] w-screen h-screen min-h-[700px] max-h-[900px] top-0 m-auto'>
           <animated.div ref={circleRef} className='absolute min-w-[500px] aspect-[1/1] bg-gold rounded-full overflow-hidden'
-            style={circleSpring}>
-            <animated.div className='absolute w-[60%] aspect-square bg-purple rounded-full blur-[150px]' style={circlegradientSpring}/>
-          </animated.div>
-        </div>
-        <animated.div className='fixed flex justify-center items-center mx-auto w-screen h-screen max-w-[1680px] min-h-[700px] max-h-[900px] mx-auto' style={gradientSpring}>
+          style={circleSpring}>
+          <animated.div className='absolute w-[60%] aspect-square bg-purple rounded-full blur-[150px]' style={circlegradientSpring}/>
+        </animated.div>  
+          </div>
+          :
+          <div ref={circlePlayGround} className='absolute z-10 w-full h-screen min-h-[700px] max-h-[900px] top-0'>
+            <div ref={circleRef} className='absolute w-[500px] right-[-30%] bottom-[-30%] aspect-square bg-gold rounded-full overflow-hidden'>
+              <div className='absolute w-[60%] aspect-square bg-purple rounded-full blur-[150px] right-0'/>
+            </div>
+          </div>
+        }
+
+
+        <animated.div className='fixed flex justify-center items-center mx-auto w-screen h-screen max-w-[1680px] min-h-[700px] max-h-[900px]' style={gradientSpring}>
           <img className='object-contain min-h-full w-auto' src={require('./assets/smoothgradientbg.png')} alt='background'/>
         </animated.div>
       </div>
