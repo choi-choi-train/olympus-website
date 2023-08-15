@@ -158,16 +158,16 @@ function App() {
     <div>
       <div className='w-full overflow-hidden'>
       <Header focus={focus} setFocus={setFocus} signupRef={signupRef}/>
-      <div className='relative text-[white] z-40 w-full mx-auto max-w-[1680px] h-screen min-h-[1000px] flex justify-between items-start sm:items-center avenirroman'>
+      <div className='relative text-[white] z-40 w-full mx-auto max-w-[1680px] h-screen min-h-[1000px] flex sm:items-center avenirroman'>
         
-        <div className='relative z-50 w-[80%] sm:w-[70%] mx-auto max-w-[1176px] h-[40%] sm:h-[50%] flex flex-col justify-between items-start mt-[20vw] sm:mt-0'>
+        <div className='relative z-50 w-[80%] sm:w-[70%] mx-auto max-w-[1176px] h-[40%] sm:h-[50%] flex flex-col justify-start sm:justify-between items-start mt-[6rem] sm:mt-0'>
           <div>
-            <div className='avenirbook text-[2.5rem] md:text-[4rem]'>Ditch the Notebook.</div>
+            <div className='avenirbook' style={{fontSize: 'min(8vw, 4rem)'}}>Ditch the Notebook.</div>
             <p className='w-[20rem] md:w-[25rem]' style={{color: 'rgba(243, 240, 254, 0.60)'}}>
               <mark>OLYMPUS</mark> is a mobile platform that empowers weightlifters to track, analyze, and share workouts so you can focus on lifting, not logging.
             </p>
           </div>
-          <div className='w-[40%] min-w-[20rem] -mt-[5rem] sm:mt-[1rem]'>
+          <div className='w-[40%] min-w-[20rem] mt-[1rem]'>
             <div className='text-[1.5rem]'>Get Early Access</div>
             <p className='mb-[0.5rem] mt-[1rem]' style={{color: 'rgba(243, 240, 254, 0.60)'}}>Enter Email Address:</p>
             <Form/>
